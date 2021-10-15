@@ -1,0 +1,21 @@
+{
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "typescript"
+  ],
+  "files.exclude": {
+    ".npm-offline-cache": true
+  },
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": -2,
+  "typescript.tsserver.log": "verbose",
+  "typescript.preferences.importModuleSpecifier": "relative"
+}
