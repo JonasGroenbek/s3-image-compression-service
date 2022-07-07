@@ -46,16 +46,9 @@ export class AppService {
         .then((r) => ({ quality, buffer: r })),
     );
 
-    let compressionResults;
-    try {
-      compressionResults = await Promise.all(imagePromises);
-    } catch (e) {
-      throw new Error('Could not comrpess images');
-    }
-
-    let awsResponses;
-    try {
-      awsResponses = await Promise.all(
+    const compressionResults = await Promise.all(imagePromises);
+    
+    const awsResponses = awsResponses = await Promise.all(
         compressionResults.map((result) =>
           this.s3.send(
             new PutObjectCommand({
@@ -68,9 +61,5 @@ export class AppService {
           ),
         ),
       );
-    } catch (e) {
-      throw new Error('Could not comrpess images');
-    }
-    console.log('awsResponses', awsResponses);
   }
 }
